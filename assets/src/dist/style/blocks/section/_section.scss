@@ -1,0 +1,33 @@
+.section {
+	padding-top: 4.25rem;
+	padding-bottom: 4.25rem;
+	&_bg_grey {
+		background-color: #f5f5f5;
+	}
+	&_p_big {
+		padding-top: 7.25rem;
+		padding-bottom: 5.625rem;
+	}
+	&__title {
+		font-size: 3rem;
+		position: relative;
+		margin-bottom: 5rem;
+		&_underline {
+			position: relative;
+			margin-bottom: 6.25rem;
+			&:after {
+				position: absolute;
+				bottom: -40%;
+				display: block;
+				content: " ";
+				background-color: $primary;
+				height: 8px;
+				width: 98px;
+			}
+		}
+	}
+}
+
+
+
+@import "section-mediaqueries";

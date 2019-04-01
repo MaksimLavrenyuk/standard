@@ -1,0 +1,37 @@
+.main-banner {
+	&__itm {
+		background-repeat: no-repeat;
+		background-position-y: bottom;
+		background-position-x: center;
+		background-size: cover;
+		min-height: 406px;
+		padding-top: 5.625rem;
+		padding-bottom: 5.625rem;
+	}
+	&__title {
+		display: inline-block;
+		font-size: 3.625rem;
+		color: rgb(255, 255, 255);
+  		font-weight: bold;
+	}
+	&__btn {
+		font-size: 1.125rem;
+		color: rgb(255, 255, 255);
+  		font-weight: bold;
+		margin-top: 2.5rem;
+		padding: 14px 102px 14px 102px;
+		border: 3px solid white;
+		border-radius: 3rem;
+		&:hover,
+		&:focus {
+			background-color: $primary;
+			color: white;
+			border-color: $primary;
+		}
+	}
+}
+
+
+
+
+@import "main-banner-mediaqueries";

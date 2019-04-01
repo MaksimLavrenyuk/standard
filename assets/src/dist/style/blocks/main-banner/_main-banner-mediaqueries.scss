@@ -1,0 +1,22 @@
+@media (max-width: $screen-width-sm) {
+	.main-banner {
+		&__itm {
+			background-position-x: right;
+		}
+	}
+}
+
+@media (max-width: $screen-width-xs) {
+	.main-banner {
+		&__title {
+			font-size: 2.5rem;
+		}
+		&__text {
+			font-size: 1.5rem;
+		}
+		&__btn {
+			padding: 1rem 3rem;
+		}
+
+	}
+}

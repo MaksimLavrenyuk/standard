@@ -1,0 +1,43 @@
+.header {
+	&__top {
+		background-color: #eeeeee;
+		padding-top: 0.75rem;
+		padding-bottom: 0.5rem;
+	}
+
+	&__center {
+		padding-top: 1.75rem;
+		padding-bottom: 1.75rem;
+	}
+	&__consult-btn {
+		font-size: 0.875rem;
+		margin-left: 0.75rem;
+		background-image: linear-gradient(90deg, rgb(217, 47, 48) 0%, rgb(154, 11, 10) 100%);
+        box-shadow: 0px 5px 5px 0px rgba(212, 44, 45, 0.34);
+        border: none;
+
+        &:not(:disabled):hover,
+        &:not(:disabled):focus {
+            background-image: linear-gradient(90deg, darken(rgb(217, 47, 48), 10%) 0%, darken(rgb(154, 11, 10), 10%) 100%);
+        }
+
+        &:not(:disabled):focus,
+        &:not(:disabled):active {
+            box-shadow: 0 0 0 0.2rem rgba(212, 44, 45, .5);
+        }
+	}
+	&__contacts {
+	
+	}
+
+	&__bottom {
+		background-color: #424f60;
+	}
+	.nav-link {
+		text-decoration: none;
+		font-weight: bold;
+	}
+}
+
+
+@import "header-mediaqueries";

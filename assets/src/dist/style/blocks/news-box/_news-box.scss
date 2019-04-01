@@ -1,0 +1,20 @@
+.news-box {
+	&__title {
+		font-size: 0.875rem;
+		margin-bottom: 1.5rem;
+		a {
+			text-decoration: underline;
+		}
+	}
+	&__date {
+		font-size: 0.75rem;
+		color: rgb(109, 109, 109);
+		display: inline-block;
+		margin-top: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+	&__text {
+		font-size: 0.875rem;
+	}
+}
+
