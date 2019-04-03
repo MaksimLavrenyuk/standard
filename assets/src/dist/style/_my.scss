@@ -57,6 +57,9 @@
 @import "blocks/card-sentence/card-sentence";
 // карточка проектов
 @import "blocks/card-project/card-project";
+// карточка процессов
+@import "blocks/card-progress/card-progress";
+
 
 // хедер
 @import "blocks/header/header";
@@ -76,6 +79,8 @@
 //СТРАНИЦЫ
 
 @import "pages/index/index";
+@import "pages/development/development";
+
 
 a {
 	text-decoration: underline;

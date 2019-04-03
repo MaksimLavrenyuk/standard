@@ -1,10 +1,17 @@
 .breadcrumb {
-	font-size: 0.875rem;
-	a {
-		text-decoration: underline;
-		color: rgb(88, 88, 88);
-		&:hover {
-			color: $link-hover-color;
-		}
-	}
+    font-size: 0.875rem;
+
+    a {
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+
+.breadcrump-item__icon {
+
+    &:hover,
+    &:focus {
+        opacity: 0.8;
+    }
 }

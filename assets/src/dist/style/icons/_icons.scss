@@ -1,4 +1,18 @@
 .icon {
 	display: block;
 	background-repeat: no-repeat;
+	&_home {
+		width: 18px;
+		height: 16px;
+		background-repeat: no-repeat;
+		background-image: url(../img/home-icon.png);
+		background-size: 100% 100%;
+	}
+	&_time  {
+		width: 19px;
+		height: 23px;
+		background-repeat: no-repeat;
+		background-image: url(../img/icon-time.png);
+		background-size: 100% 100%;
+	}
 }

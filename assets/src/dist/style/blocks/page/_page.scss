@@ -1,6 +1,11 @@
 .page {
 	&__content {
-		padding-bottom: 2rem;
+		padding-bottom: 4rem;
+	}
+	&__title {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+		font-size: 1.875rem;
 	}
 	&__info {
 		font-size: 0.875rem;

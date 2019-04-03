@@ -1,0 +1,51 @@
+.card-progress {
+	padding: 30px 15px;
+	transition: 0.3s;
+	&:hover,
+	&:focus {
+		box-shadow: 0 5px 35px 0 rgba(164,164,164,.75);
+	}
+	&__header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+	&__num {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px;
+		font-size: 1.125rem;
+		color: rgb(254, 254, 254);
+		font-weight: bold;
+		background-color: $primary;
+		border-radius: 50%;
+		margin-right: 1rem;
+	}
+	&__title {
+		font-size: 1rem;
+		text-transform: uppercase;
+		font-weight: bold;
+
+	}
+	&__text {
+		font-size: 0.875rem;
+		margin-bottom: 1rem;
+		&_color_blue {
+			color: lighten(#0f1a86, 20%);
+		}
+	}
+	&-time {
+		display: flex;
+		align-items: center;
+		&__icon {
+			margin-right: 1rem;
+		}
+		&__text {
+			font-size: 0.875rem;
+			font-weight: bold;
+  			line-height: 1.2;
+		}
+	}
+}
