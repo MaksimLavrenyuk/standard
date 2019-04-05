@@ -1,3 +1,21 @@
+.contacts-page {
+    &-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        &__title {
+            font-size: 1.125rem;
+        }
+        &__text {
+            text-decoration: none;
+            color: $primary;
+        }
+    }
+}
+
 .contacts {
     padding: 0;
     margin: 0;

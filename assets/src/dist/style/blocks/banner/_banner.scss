@@ -1,0 +1,50 @@
+.banner {
+    background-color: #6ed5f6;
+    padding: 2.875rem 3.875rem 2.875rem 4.6875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+        font-size: 1.875rem;
+        color: rgb(255, 255, 255);
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    &__btn {
+        font-size: 1.125rem;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        background-color: rgb(183, 219, 42);
+        border: rgb(183, 219, 42);
+        box-shadow: 0px 5px 5px 0px rgba(149, 149, 149, 0.75);
+        padding: 1rem 5rem;
+		&:not(:disabled):not(.disabled).active,
+		&:not(:disabled):not(.disabled):active {
+			background-color: darken(rgb(183, 219, 42), 10%);
+    		border-color: darken(rgb(183, 219, 42), 10%);
+		}
+		&.focus,
+		&:focus {
+			box-shadow: 0 0 0 0.2rem rgba(183, 219, 42,.5);
+		}
+		&:hover {
+		    color: #fff;
+		    background-color: darken(rgb(183, 219, 42), 10%);
+		    border-color: darken(rgb(183, 219, 42), 10%);
+		}
+    }
+}
+
+@media (max-width: $screen-width-sm) {
+	.banner {
+		flex-direction: column;
+		text-align: center;
+		padding:1.5rem 2.5rem;
+		&__text {
+			margin-bottom: 1rem;
+			margin-right: 0;
+		}
+	}
+}

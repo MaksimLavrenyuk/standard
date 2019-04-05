@@ -1,0 +1,25 @@
+.gift {
+	margin-top: 2rem;
+	display: flex;
+	align-items: center;
+	&__img {
+		margin-right: 2rem;
+		flex: 4rem 0 0;
+	}
+	&__content {
+		flex: calc(100% - 5rem) 0 0;
+		margin-bottom: 0;
+		font-size: 1.125rem;
+		font-weight: bold;
+	}
+}
+
+@media (max-width: $screen-width-xs) {
+	.gift {
+		flex-direction: column;
+		&__img {
+			margin-right: 0;
+			margin-bottom: 1rem;
+		}
+	}	
+}

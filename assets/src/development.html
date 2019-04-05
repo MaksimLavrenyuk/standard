@@ -218,49 +218,6 @@
     //= dist/template/modal/modal.html
     <!--/Импортируем футер-->
     <script src="dist/js/main.js" async></script>
-    <script>
-    $(document).ready(function() {
-        $('#slider').slick({
-            lazyLoad: 'ondemand',
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: false,
-            arrows: true,
-            responsive: [{
-                    breakpoint: 1280,
-                    settings: {
-                        arrows: false
-                    }
-                },
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        arrows: false
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2,
-                        arrows: false
-                    }
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1,
-                        arrows: false
-                    }
-                }
-            ]
-
-        });
-    });
-    </script>
 </body>
 
 </html>

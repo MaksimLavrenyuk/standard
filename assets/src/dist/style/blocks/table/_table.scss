@@ -2,9 +2,12 @@
   thead th {
     border-bottom: 1px solid rgb(225, 225, 225);
     border-top: none;
-    background-color: #59697f;
+    background-color: #424f60;
     color: white;
     font-weight: bold;
   }
-  border-bottom: 1px solid rgb(225, 225, 225);
+ 
+}
+.table td, .table th {
+	padding: 0.875rem 2.25rem;
 }

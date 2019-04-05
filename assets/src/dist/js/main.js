@@ -10,6 +10,8 @@
 //= ../../../../node_modules/bootstrap/js/dist/dropdown.js
 // Коллапс
 //= ../../../../node_modules/bootstrap/js/dist/collapse.js
+// табы
+//= ../../../../node_modules/bootstrap/js/dist/tab.js
 
 // Импортируем телефонную валидацию
 //= ../../../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js

@@ -1,0 +1,27 @@
+.nav-pills {
+	a {
+		text-decoration: none;
+	}
+	.nav-link {
+		padding: 1rem;
+	}
+	.nav-item {
+		background-color: #e4e4e4;
+		color: $body-color;
+	}
+}
+
+.nav-pills .nav-item + .nav-item  {
+	border-left: 1px solid white;
+}
+
+@media (max-width: $screen-width-md) {
+	.nav-pills {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		padding-bottom: 1rem;
+		.nav-link {
+			 white-space: nowrap;
+		}
+	}	
+}

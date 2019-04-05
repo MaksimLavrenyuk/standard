@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Стандарт</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="dist/js/critical.js"></script>
+</head>
+
+<body>
+    <!--Импортируем header-->
+    //= dist/template/header/header.html
+    <!--/Импортируем header-->
+    <div class="page">
+        <div class="page__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        //= dist/template/breadcrumb/breadcrumb.html
+                    </div>
+                    <div class="col-12 mb-5">
+                        <h1 class="section__title section__title_underline">Контакты</h1>
+                        <div class="contacts-page">
+                            <ul class="contacts-page-list">
+                                <li class="contacts-page-list__itm">
+                                    <h5 class="contacts-page-list__title">Телефон:</h5>
+                                    <a href="tel:+74912575059" class="contacts-page-list__text">+7 4912 57-50-59</a>
+                                </li>
+                            </ul>
+                            <ul class="contacts-page-list">
+                                <li class="contacts-page-list__itm">
+                                    <h5 class="contacts-page-list__title">Электронная почта:</h5>
+                                </li>
+                                <li class="contacts-page-list__itm">
+                                    <span class="contacts-page-list__title">заказать сайт - </span>
+                                    <a href="mailto:zakaz@standart-studio.ru" class="contacts-page-list__text">zakaz@standart-studio.ru</a>
+                                </li>
+                                <li class="contacts-page-list__itm">
+                                    <span class="contacts-page-list__title">по общим вопросам - </span>
+                                    <a href="mailto: info@standart-studio.ru" class="contacts-page-list__text"> info@standart-studio.ru</a>
+                                </li>
+                            </ul>
+                            <ul class="contacts-page-list">
+                                <li class="contacts-page-list__itm">
+                                    <h5 class="contacts-page-list__title">Адрес офиса:</h5>
+                                    <span class="contacts-page-list__text">г. Рязань, ул. Есенина, д. 1А (за ТЦ “Евпатий Коловрат”)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="map" id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section section_bg_grey mt-5">
+            <div class="container index-feedback">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 h-100 d-none d-xl-block">
+                        <img class="img-fluid development-woman-img position-absolute   position-bottom-68px" src="dist/img/bg-w.png" alt="" style=" bottom: -20px;     top: -106px;">
+                    </div>
+                    <div class="col-xl-5 col-lg-6">
+                        <p class="index-feedback__text">Не нашли подходящей услуги? Опишите вашу задачу или проблему.</p>
+                        <form name="FeedbackForm" method="post" action="dist/server/feedback.php" class="index-feedback__form form form_needs-validation">
+                            <input name="techSupportFeedback" type="hidden" value="Запрос на техподдержку">
+                            <div class="form-group">
+                                <label for="techSupportFeedback-name">Имя</label>
+                                <input name="name" type="text" class="form-control" id="techSupportFeedback-name" placeholder="Ваше имя *" required>
+                                <div class="valid-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="techSupportFeedback-tel">Телефон</label>
+                                <input name="tel" type="tel" class="form-control" id="techSupportFeedback-tel" placeholder="Телефон для связи *" required>
+                                <div class="valid-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="techSupportFeedback-tel">Адрес сайта</label>
+                                <input name="link" type="text" class="form-control" id="techSupportFeedback-link" placeholder="Адрес сайта">
+                            </div>
+                            <div class="form-group">
+                                <label for="techSupportFeedback-message">Комментарий</label>
+                                <textarea name="message" class="form-control" id="techSupportFeedback-message" rows="3" placeholder="Описание задачи или проблемы"></textarea>
+                            </div>
+                            <small class="form-text text-muted mb-2">Поля обозначенные * обязательны;</small>
+                            <small class="form-text text-muted">Отправляя данную форму, я даю <a href="#" class="font-italic text-dark">согласие на обработку персональных данных</a></small>
+                            <button type="submit" class="btn btn-primary mt-4" disabled>Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    <!--Импортируем футер-->
+    //= dist/template/footer/footer.html
+    <!--/Импортируем футер-->
+    <!--Импортируем футер-->
+    //= dist/template/modal/modal.html
+    <!--/Импортируем футер-->
+    <script src="dist/js/main.js" async></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=fd9a221e-d6d7-41f0-aaf6-ed3c458a2caa&lang=ru_RU" type="text/javascript"></script>
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: 'dist/server/coords.php',
+            type: 'get',
+            dataType: 'json',
+            success: function(data) {
+                var markAddress = data.markAddress;
+                var markBaloonContent = data.markBaloonContent;
+                var markHintContent = data.markHintContent;
+                var markIconContent = data.markIconContent;
+
+                ymaps.ready(init);
+
+                function init() {
+                    // Создание карты.    
+                    myMap = new ymaps.Map("map", {
+                        // Координаты центра карты.
+                        // Порядок по умолчанию: «широта, долгота».
+                        // Чтобы не определять координаты центра карты вручную,
+                        // воспользуйтесь инструментом Определение координат.
+                        center: [54.629528, 39.770583],
+                        controls: [],
+                        // Уровень масштабирования. Допустимые значения:
+                        // от 0 (весь мир) до 19.
+                        zoom: 7
+                    });
+
+                    makeMark(markAddress, markBaloonContent, markHintContent, markIconContent);
+
+                    function makeMark(address, baloonContent, hintContent, iconContent) {
+                        ymaps.geocode(address, {
+                            results: 1
+                        }).then(function(res) {
+                            // Выбираем первый результат геокодирования.
+                            var firstObj = res.geoObjects.get(0),
+                                // Координаты геообъекта.
+                                coords = firstObj.geometry.getCoordinates(),
+                                bounds = firstObj.properties.get('boundedBy');
+
+                            firstObj.options.set({
+                                // Опции.
+                                // Необходимо указать данный тип макета.
+                                iconLayout: 'default#image',
+                                // Своё изображение иконки метки.
+                                iconImageHref: 'dist/img/mark.png',
+                                // Размеры метки.
+                                iconImageSize: [65, 70],
+                                // Смещение левого верхнего угла иконки относительно
+                                // её "ножки" (точки привязки).
+                                iconImageOffset: [-3, -42]
+                            });
+                            firstObj.properties.set({
+                                balloonContent: baloonContent,
+                                hintContent: hintContent,
+                                iconContent: iconContent
+                            });
+                            myMap.geoObjects.add(firstObj);
+                            myMap.setBounds(bounds, {
+                                // Проверяем наличие тайлов на данном масштабе.
+                                checkZoomRange: true
+                            });
+                        });
+                    };
+
+                };
+            },
+            error: function(data) {
+                alert('Ошибка при отправке данных на сервер');
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
